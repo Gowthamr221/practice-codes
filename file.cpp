@@ -1,2 +1,0 @@
-// pointer practice
-
