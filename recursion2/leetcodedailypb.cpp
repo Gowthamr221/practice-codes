@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-    map <int,int> k;
+    map <int,int,greater<int>> k;
     
     k.insert(pair<int,int>(1,2));
     k.insert(pair<int,int>(5,1));
