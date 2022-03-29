@@ -1,0 +1,4 @@
+﻿  ConsoleApplication1.cpp
+C:\Users\gowth\Desktop\practice\practice-codes\ConsoleApplication1\ConsoleApplication1.cpp(27,41): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\gowth\Desktop\practice\practice-codes\ConsoleApplication1\ConsoleApplication1.cpp(27,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  ConsoleApplication1.vcxproj -> C:\Users\gowth\Desktop\practice\practice-codes\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
