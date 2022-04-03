@@ -10,7 +10,7 @@ bool search(int i,int j, vector<vector<char>>&board,string word,unsigned int cur
     if(i < 0 || j < 0 || i>=row || j>=col || board[i][j]!=word[currIndex]){
         return false;
     }
-    int t = board[i][j];
+    char t = board[i][j];
     board[i][j]='#';
     for(int k = 0;k<4;k++){
         if(search(i+dx[k],j+dy[k],board,word,currIndex+1)){
