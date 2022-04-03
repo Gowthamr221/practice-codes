@@ -2,20 +2,18 @@
 
 using namespace std;
 
+void printArr(vector<int>&arr){
+    for(auto it:arr){
+        cout << it << " ";
+    }
+    cout << endl;
+}
+
 int main(){
-    vector<int>arr={1,2,3};
-    vector<int> dup = arr;
-    for(auto it:arr){
-        cout << it << " ";
+    vector<int>arr={1,2,3,4,5};
+    
+    do{
+        printArr(arr);
     }
-    cout << endl;
-    next_permutation(arr.begin(),arr.end());
-    while (arr!=dup)
-    {
-    for(auto it:arr){
-        cout << it << " ";
-    }
-    cout << endl;
-    next_permutation(arr.begin(),arr.end());
-    }
+    while(next_permutation(arr.begin(),arr.end()));
 }
