@@ -1,0 +1,5 @@
+Trees are hierarchial data structure
+
+in an hierachial structure i can have maximum of 2 children to each node 
+this is called a binary tree
+

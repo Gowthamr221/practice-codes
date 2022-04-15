@@ -1,47 +1,35 @@
 #include<bits/stdc++.h>
 
 using namespace std;
-int gcd(int a,int b){
-    if(a==0){
-        return b;
-    }
-    if(b==0){
-        return a;
-    }
-    if(a==b){
-        return a;
-    }
-    if(a>b){
-        return gcd(a-b,b);
-    }
-    return gcd(a,b-a);
-}
+
 int main(){
-    int testCases;
+    long long int testCases;
     cin >> testCases;
     while (testCases--)
     {
-        int a;
-        int b;
-        int flag = 0;
+        long long int a;
+        long long int b;
         cin >> a >> b;
-        int curr_best_a=a;
-        int curr_best_b=b;
-        for(int i=a;i<b;i++){
-            for(int j=i+1;j<=b;j++){
-                if(gcd(i,j)>1){
-                    flag=1;
-                    if(i+j<=curr_best_a+curr_best_b){
-                        curr_best_a = i;
-                        curr_best_b = j;
-                    }
+        if(a%2==0){
+            if(b-a>=2){
+                cout << a << " " << a+2 << endl;
+            }
+            else{
+                cout << -1 << endl;
             }
         }
-        }
-        if(flag==0){
-            cout << -1 << endl;
-        }else{
-            cout << curr_best_a << " " << curr_best_b;
+        else{
+            if(b-a>=3){
+                if(a%3==0){
+                    cout << a << " " << a+3 << endl;
+                }
+                else{
+                    cout << a+1 << " " << a+3 << endl;
+                }
+            }
+            else{
+                cout << -1 << endl;
+            }
         }
         
     }
