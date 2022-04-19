@@ -1,24 +1,37 @@
 class Solution {
+private:
+    TreeNode* first;
+    TreeNode* prev;
+    TreeNode* next;
+    TreeNode* last;
 public:
-	TreeNode* firstMistake, *secondMistake, *pre;
+    void inorder(TreeNode*root){
+        if(root==NULL){
+            return;
+        }
+        inorder(root->left);
+        if(prev!=NULL && (root->val < prev->val)){
+            if(first==NULL){
+                first = prev;
+                next = root;
+            }
+            else{
+            last = root;
+           }
+        }
+        
+        prev = root;
+        inorder(root->right);
+        
+    }
 	void recoverTree(TreeNode* root) {
-		pre = new TreeNode(INT_MIN);
-		inorder(root);
-		swap(firstMistake->val, secondMistake->val);
+		first = next = last = NULL;
+        // here prev should not be null inorder to trigger proper flow 
+        prev = new TreeNode(INT_MIN);
+        inorder(root);
+        if(first && last) swap(first->val,last->val);
+        else if(first && next) swap(first->val,next->val);
 	}
 
-	void inorder(TreeNode* root) {
-		if(root == nullptr) 
-			return;
-
-		inorder(root->left);
-
-		if(firstMistake == nullptr && root->val < pre->val)
-			firstMistake = pre;
-		if(firstMistake != nullptr && root->val < pre->val)
-			secondMistake = root;
-		pre = root;
-
-		inorder(root->right);
-	}
+	
 };
