@@ -10,16 +10,16 @@ public:
             return;
         }
         inorder(root->left);
-        if(prev!=NULL && (root->val < prev->val)){
+        if(prev!=NULL && (prev->val > root->val )){
             if(first==NULL){
                 first = prev;
                 next = root;
             }
             else{
-            last = root;
-           }
+                last = root;
+            }
         }
-        
+            
         prev = root;
         inorder(root->right);
         
