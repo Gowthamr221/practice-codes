@@ -27,7 +27,7 @@ public:
 	void recoverTree(TreeNode* root) {
 		first = next = last = NULL;
         // here prev should not be null inorder to trigger proper flow 
-        prev = new TreeNode(INT_MIN);
+        // prev = new TreeNode(INT_MIN);
         inorder(root);
         if(first && last) swap(first->val,last->val);
         else if(first && next) swap(first->val,next->val);
