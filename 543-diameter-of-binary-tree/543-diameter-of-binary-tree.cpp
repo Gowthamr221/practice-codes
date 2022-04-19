@@ -24,9 +24,7 @@ public:
         }
         int lh = helper(root->left);
         int rh = helper(root->right);
-        if(abs(lh+rh)>ans){
-            ans = lh+rh;
-        }
+        ans = max(ans,lh+rh);
         return max(lh,rh)+1;
         
     }
