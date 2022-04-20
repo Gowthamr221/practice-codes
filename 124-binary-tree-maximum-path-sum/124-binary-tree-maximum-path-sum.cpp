@@ -22,11 +22,11 @@ public:
          }
         int lval = iterate(root->left);
         int rval = iterate(root->right);
-        int case1= max(root->val,max(lval+root->val,rval+root->val));
-        int case2= max(case1,lval+rval+root->val);
-        sol = max(case2,sol);
         
-        return max(root->val,max(lval+root->val,rval+root->val));
+        
+        sol = max(root->val+lval+rval,sol);
+        
+        return max(0,max(root->val+lval,root->val+rval));
     }
   
 };
