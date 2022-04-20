@@ -26,7 +26,7 @@ public:
         int case2= max(case1,lval+rval+root->val);
         sol = max(case2,sol);
         
-        return case1;
+        return max(root->val,max(lval+root->val,rval+root->val));
     }
   
 };
