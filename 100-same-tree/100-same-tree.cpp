@@ -11,22 +11,18 @@
  */
 class Solution {
 public:
-    int sol = INT_MIN; 
-    int maxPathSum(TreeNode* root) {
-       iterate(root);
-       return sol; 
+    bool isSameTree(TreeNode* p, TreeNode* q) {
+        if(p==NULL || q==NULL){
+            return q==p;
+        }
+        
+        if(p->val != q->val){
+            return false;
+        }
+       
+        
+      return isSameTree(p->left,q->left) && isSameTree(p->right,q->right);
+     
+        
     }
-    int iterate(TreeNode* root){
-         if(root==NULL){
-             return 0;
-         }
-        int lval = iterate(root->left);
-        int rval = iterate(root->right);
-        
-        
-        sol = max(root->val+lval+rval,sol);
-        
-        return max(0,max(root->val+lval,root->val+rval));
-    }
-  
 };
