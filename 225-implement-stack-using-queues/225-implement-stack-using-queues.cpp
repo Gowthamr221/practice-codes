@@ -1,27 +1,33 @@
 class MyStack {
-    deque<int>storage;
+    queue<int> que;
 public:
     MyStack() {
-      
+        
     }
     
     void push(int x) {
-        storage.push_back(x);
+        que.push(x);
+        for(int i=0;i<que.size()-1;++i){
+			que.push(que.front());
+			que.pop();
+		}
     }
     
     int pop() {
-        int val = storage.back();
-        storage.pop_back();
-        return val;
+        
+            int val = que.front();
+            que.pop();
+            return val;
+        
         
     }
     
     int top() {
-        return storage.back();
+        return que.front();
     }
     
     bool empty() {
-        return storage.empty();
+        return que.empty();
     }
 };
 
