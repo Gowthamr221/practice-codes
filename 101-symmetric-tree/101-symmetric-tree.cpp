@@ -10,31 +10,21 @@
  * };
  */
 class Solution {
-vector<int>left;
-vector<int>right;
+
 public:
     bool isSymmetric(TreeNode* root) {
-        checkRight(root->right);
-        checkLeft(root->left);
-        return left==right;  
+       
+        return helper(root->left,root->right);
+    }   
+    
+    bool helper(TreeNode* leftNode,TreeNode* rightNode){
+        if(leftNode==NULL || rightNode==NULL){
+            return leftNode==rightNode;
+        }
+        if(leftNode->val!=rightNode->val){
+            return false;
+        }
+        return helper(leftNode->left,rightNode->right)&&helper(leftNode->right,rightNode->left);
     }
     
-    void checkRight(TreeNode* node){
-        if(node==NULL){
-            right.push_back(NULL);
-            return;
-        }
-        right.push_back(node->val);
-        checkRight(node->right);
-        checkRight(node->left);
-    }
-     void checkLeft(TreeNode* node){
-        if(node==NULL){
-            left.push_back(NULL);
-            return;
-        }
-        left.push_back(node->val);
-        checkLeft(node->left);
-        checkLeft(node->right);
-    }
 };
