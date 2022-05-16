@@ -7,7 +7,7 @@ public:
         queue<pair<int,pair<int,int>>> storage;
         int m = grid.size();
         int n = grid[0].size();
-        vector<pair<int,int>>dir = {{0,1},{1,0},{0,-1},{-1,0},{1,1},{1,-1},{-1,1},{-1,-1}};
+        vector<pair<int,int>>dir = {{1,1},{1,-1},{-1,1},{-1,-1},{0,1},{1,0},{0,-1},{-1,0}};
         storage.push({0,{0,0}});
         grid[0][0]=1;
         while(!storage.empty()){
